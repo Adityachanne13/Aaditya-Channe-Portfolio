@@ -32,6 +32,21 @@ function type() {
 
     setTimeout(type, typeSpeedVar);
 }
+
+    const hamburger = document.querySelector(".hamburger");
+    const navLinksMenu = document.querySelector(".nav-links");
+
+    hamburger.addEventListener("click", () => {
+      navLinksMenu.classList.toggle("active");
+    });
+//close menu
+    const navLinksItems = document.querySelectorAll(".nav-links a");
+    navLinksItems.forEach(link => {
+        link.addEventListener("click", () => {
+        navLinksMenu.classList.remove("active");
+    });
+});
+
 // single DOMContentLoaded handler
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -158,3 +173,4 @@ It listens for the window scroll event and shows the button with a fade-in effec
 Clicking the button scrolls the page smoothly to the top using the native scrollTo method with 'smooth' behavior. 
 CSS handles the fade effect through opacity and transitions, while JavaScript only toggles a class to show or hide the button and triggers the smooth scroll.
 */
+
